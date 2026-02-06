@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grace Githinji | Web Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS with custom fonts -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            body: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-body scroll-smooth">
+
+  <!-- Navbar -->
+<nav class="bg-white shadow fixed w-full z-10">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <h1 class="text-xl font-heading font-bold text-blue-600">
+      <i class="fa-solid fa-code"></i> Grace Githinji
+    </h1>
+
+    <!-- Desktop Menu -->
+    <div class="space-x-6 hidden md:flex">
+      <a href="#about" class="hover:text-blue-600 flex items-center">
+        <i class="fa-solid fa-user mr-1"></i> About
+      </a>
+      <a href="#skills" class="hover:text-blue-600 flex items-center">
+        <i class="fa-solid fa-laptop-code mr-1"></i> Skills
+      </a>
+      <a href="#projects" class="hover:text-blue-600 flex items-center">
+        <i class="fa-solid fa-diagram-project mr-1"></i> Projects
+      </a>
+      <a href="#contact" class="hover:text-blue-600 flex items-center">
+        <i class="fa-solid fa-envelope mr-1"></i> Contact
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button id="menu-btn" class="md:hidden focus:outline-none">
+      <i id="menu-icon" class="fa-solid fa-bars text-2xl text-gray-700"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu (hidden by default, slide from left) -->
+  <div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-20">
+    <div class="px-6 py-8 flex flex-col space-y-6">
+      <a href="#about" class="hover:text-blue-600 flex items-center" onclick="closeMenu()">
+        <i class="fa-solid fa-user mr-2"></i> About
+      </a>
+      <a href="#skills" class="hover:text-blue-600 flex items-center" onclick="closeMenu()">
+        <i class="fa-solid fa-laptop-code mr-2"></i> Skills
+      </a>
+      <a href="#projects" class="hover:text-blue-600 flex items-center" onclick="closeMenu()">
+        <i class="fa-solid fa-diagram-project mr-2"></i> Projects
+      </a>
+      <a href="#contact" class="hover:text-blue-600 flex items-center" onclick="closeMenu()">
+        <i class="fa-solid fa-envelope mr-2"></i> Contact
+      </a>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-10" onclick="closeMenu()"></div>
+</nav>
+
+
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-blue-600 text-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+        Hi, I'm Grace Githinji
+      </h2>
+      <p class="text-lg md:text-xl mb-6">
+        <i class="fa-solid fa-laptop-code mr-2"></i>
+        ICT Diploma Graduate | Web Developer
+      </p>
+      <a href="#projects"
+        class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+        View My Work
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-heading font-bold mb-6">
+        <i class="fa-solid fa-user text-blue-600 mr-2"></i> About Me
+      </h3>
+      <p class="text-lg max-w-4xl mx-auto leading-relaxed">
+        I am a recent ICT Diploma graduate from Tetu Technical and Vocational College,
+        Nyeri County. I am a passionate web developer skilled in both frontend and backend
+        development. I enjoy building systems that solve real-world problems.
+        I participated in a Science and Innovation Fair where my Agricultural Management
+        System ranked among the top three projects. I also completed a three-month internship
+        at Nyahururu Medical Hospital where I gained hands-on experience in ICT support
+        and system management.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-heading font-bold text-center mb-10">
+        <i class="fa-solid fa-gears text-blue-600 mr-2"></i> Technical Skills
+      </h3>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Frontend -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-heading font-semibold mb-4">
+            <i class="fa-solid fa-palette text-blue-600 mr-2"></i> Frontend
+          </h4>
+          <ul class="space-y-2">
+            <li><i class="fa-brands fa-html5 mr-2 text-orange-600"></i> HTML5</li>
+            <li><i class="fa-brands fa-css3-alt mr-2 text-blue-500"></i> CSS3</li>
+            <li><i class="fa-brands fa-js mr-2 text-yellow-500"></i> JavaScript</li>
+            <li><i class="fa-brands fa-react mr-2 text-cyan-500"></i> React.js</li>
+            <li>Tailwind CSS</li>
+            <li>Vue.js</li>
+          </ul>
+        </div>
+
+        <!-- Backend -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-heading font-semibold mb-4">
+            <i class="fa-solid fa-server text-blue-600 mr-2"></i> Backend
+          </h4>
+          <ul class="space-y-2">
+            <li><i class="fa-brands fa-php mr-2 text-indigo-600"></i> PHP</li>
+            <li><i class="fa-brands fa-node mr-2 text-green-600"></i> Node.js</li>
+            <li><i class="fa-brands fa-python mr-2 text-yellow-400"></i> Python</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+
+        <!-- Other -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <h4 class="text-xl font-heading font-semibold mb-4">
+            <i class="fa-solid fa-code-branch text-blue-600 mr-2"></i> Other
+          </h4>
+          <ul class="space-y-2">
+            <li>Java</li>
+            <li>C / C++</li>
+            <li>SQL / MySQL</li>
+            <li><i class="fa-brands fa-git-alt mr-2 text-orange-600"></i> Git & GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-heading font-bold text-center mb-10">
+        <i class="fa-solid fa-diagram-project text-blue-600 mr-2"></i> Projects
+      </h3>
+
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <h4 class="text-2xl font-heading font-semibold mb-4">
+          <i class="fa-solid fa-seedling text-green-600 mr-2"></i> Agricultural Management System
+        </h4>
+        <p class="mb-4">
+          A system designed to manage agricultural data and operations.
+          Presented at a Science and Innovation Fair and ranked among the top three best projects.
+        </p>
+        <p class="font-medium">
+          Technologies Used: HTML, CSS, JavaScript, PHP, MySQL
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-blue-600 text-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-heading font-bold mb-6">
+        <i class="fa-solid fa-envelope mr-2"></i> Contact Me
+      </h3>
+      <p class="mb-4">
+        <i class="fa-solid fa-envelope mr-2"></i> wamahigaggrace@gmail.com
+      </p>
+      <p class="mb-4">
+        <i class="fa-brands fa-github mr-2"></i> github.com/grace
+      </p>
+      <p>
+        <i class="fa-brands fa-linkedin mr-2"></i> linkedin.com/in/yourprofile
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6">
+    <p>&copy; 2026 Grace Githinji. All rights reserved.</p>
+  </footer>
+
+
+  <!-- Vanilla JS -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menuIcon = document.getElementById('menu-icon');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.contains('-translate-x-full');
+    if (isOpen) {
+      mobileMenu.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+      menuIcon.classList.remove('fa-bars');
+      menuIcon.classList.add('fa-xmark');
+    } else {
+      closeMenu();
+    }
+  });
+
+  function closeMenu() {
+    mobileMenu.classList.add('-translate-x-full');
+    overlay.classList.add('hidden');
+    menuIcon.classList.remove('fa-xmark');
+    menuIcon.classList.add('fa-bars');
+  }
+</script>  
+
+
+</body>
+</html>
